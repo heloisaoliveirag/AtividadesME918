@@ -1,0 +1,56 @@
+source("executa.R")
+
+for (i in 1:length(sample)) {
+  if(i < 10) {
+    if(planos[[i]]$distribution == "poisson") {
+      name <- paste0("resultados/simulacao","0",i,".RData")
+      result <- Generate_Sample("planos[[i]]$distribution")
+      distribution <- planos[[i]]$distribution
+      lambda <- planos[[i]]$lambda
+      obs <- planos[[i]]$obs
+      save(distribution, lambda, obs, result, file = name)
+    }
+    else if(planos[[i]]$distribution == "normal") {
+      name <- paste0("resultados/simulacao","0",i,".RData")
+      result <- Generate_Sample("planos[[i]]$distribution")
+      distribution <- planos[[i]]$distribution
+      mu <- planos[[i]]$mu
+      sigma2 = planos[[i]]$sigma2
+      obs <- planos[[i]]$obs
+      save(distribution, mu, sigma2, obs, result, file = name)
+    }
+    else if(planos[[i]]$distribution == "bernoulli") {
+      name <- paste0("resultados/simulacao","0",i,".RData")
+      result <- Generate_Sample("planos[[i]]$distribution")
+      distribution <- planos[[i]]$distribution
+      p <- planos[[i]]$p
+      obs <- planos[[i]]$obs
+      save(distribution, p, obs, result, file = name)
+    }}
+  else {
+    if(planos[[i]]$distribution == "poisson") {
+      name <- paste0("resultados/simulacao",i,".RData")
+      result <- Generate_Sample("planos[[i]]$distribution")
+      distribution <- planos[[i]]$distribution
+      lambda <- planos[[i]]$lambda
+      obs <- planos[[i]]$obs
+      save(distribution, lambda, obs, result, file = name)
+    }
+    else if(planos[[i]]$distribution == "normal") {
+      name <- paste0("resultados/simulacao", i, ".RData")
+      result <- Generate_Sample("planos[[i]]$distribution")
+      distribution <- planos[[i]]$distribution
+      mu <- planos[[i]]$mu
+      sigma2 = planos[[i]]$sigma2
+      obs <- planos[[i]]$obs
+      save(distribution, mu, sigma2, obs, result, file = name)
+    }
+    else if(planos[[i]]$distribution == "bernoulli") {
+      name <- paste0("resultados/simulacao", i, ".RData")
+      result <- Generate_Sample("planos[[i]]$distribution")
+      distribution <- planos[[i]]$distribution
+      p <- planos[[i]]$p
+      obs <- planos[[i]]$obs
+      save(distribution, p, obs, result, file = name)
+    }}}
+
